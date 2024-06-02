@@ -5,7 +5,7 @@ import {gsap} from "gsap"
 import {useLayoutEffect} from "react"
 
 const ModelOne = () => {
-    const {nodes, materials} = useGLTF('./models/lockerGSAP3.glb')
+    const {nodes, materials} = useGLTF('./models/lockerGSAP4.glb')
     const mod = useRef()
     const tl = useRef()
     const scroll = useScroll()
