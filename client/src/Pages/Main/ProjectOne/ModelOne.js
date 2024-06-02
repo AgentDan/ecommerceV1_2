@@ -15,6 +15,8 @@ const ModelOne = () => {
     const G4 = useRef()
     const G5 = useRef()
     const G6 = useRef()
+    const G7 = useRef()
+    const G8 = useRef()
 
     useFrame((state, delta) => {
         tl.current.seek(scroll.offset * tl.current.duration())
@@ -22,7 +24,7 @@ const ModelOne = () => {
 
     useLayoutEffect(() => {
         tl.current = gsap.timeline({defaults: {duration: 2, ease: 'power1.inOut'}})
-        mod.current.rotation.y = 5
+        mod.current.rotation.y = 2
         mod.current.position.y = -0.3
         mod.current.position.z = -0.5
         tl.current
@@ -42,6 +44,9 @@ const ModelOne = () => {
             .to(mod.current.position, {y: 18.5}, 10)
             .to(mod.current.rotation, {y: -1.7}, 10)
 
+            .to(mod.current.position, {y: 24.5}, 13)
+            .to(mod.current.rotation, {y: -0.7}, 13)
+
     }, [])
 
     return (
@@ -57,19 +62,22 @@ const ModelOne = () => {
                 </group>
 
                 <group ref={G3}>
-                    <mesh geometry={nodes.G3.geometry} material={materials.G3}/>
+                    <mesh geometry={nodes.G3.geometry} material={materials.G1}/>
                 </group>
                 <group ref={G4}>
-                    <mesh geometry={nodes.G4.geometry} material={materials.G3}/>
+                    <mesh geometry={nodes.G4.geometry} material={materials.G2}/>
                 </group>
                 <group ref={G5}>
-                    <mesh geometry={nodes.G5.geometry} material={materials.G3}/>
+                    <mesh geometry={nodes.G5.geometry} material={materials.G1}/>
                 </group>
                 <group ref={G6}>
-                    <mesh geometry={nodes.G6.geometry} material={materials.G3}/>
+                    <mesh geometry={nodes.G6.geometry} material={materials.G2}/>
                 </group>
-                <group>
-                    <mesh geometry={nodes.G7.geometry} material={materials.G7}/>
+                <group ref={G7}>
+                    <mesh geometry={nodes.G7.geometry} material={materials.G1}/>
+                </group>
+                <group ref={G8}>
+                    <mesh geometry={nodes.G8.geometry} material={materials.G2}/>
                 </group>
 
             </group>
