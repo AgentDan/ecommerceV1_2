@@ -5,14 +5,14 @@ import {Menu} from "../Menu/Menu"
 import {useState} from "react"
 
 const MainPage = ({isLogin}) => {
-    const [menuOpened, setMenuOpened] = useState(false)
+    // const [menuOpened, setMenuOpened] = useState(false)
 
     return (
         <>
             <Canvas camera={{fov: 54, position: [2, 1, 5]}}>
                 <ProjectOne/>
             </Canvas>
-            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin}/>
+            {/*<Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin}/>*/}
         </>
     )
 }

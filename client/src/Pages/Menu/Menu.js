@@ -12,6 +12,7 @@ export const Menu = (props) => {
         navigate('/')
     }
 
+
     return (
         <>
             <button
@@ -39,41 +40,57 @@ export const Menu = (props) => {
             >
                 <div className="flex items-center justify-start flex-col gap-6 p-8 font-bold text-white">
 
-                    {isLogin &&
-                        (<div
-                            className={'h-6 w-auto cursor-pointer mt-28'}
-                            onClick={logOutHandler}>
-                            LogOut
-                        </div>)
-                    }
-                    {!isLogin &&
-                        (<div className={'h-6 w-auto cursor-pointer mt-28'}>
-                            <Link to={"/login"}>
-                                LogIn
-                            </Link>
-                        </div>)
-                    }
+                    <div className={'h-6 w-auto cursor-pointer mt-28'}>
+                        <Link to={"/"}
+                              onClick={() => setMenuOpened(false)}
+                        >
+                            HOME
+                        </Link>
+                    </div>
 
+                    <div className={'h-6 w-auto cursor-pointer '}
+                         onClick={() => setMenuOpened(false)}
+                    >
+                        <Link to={"/table"}>
+                            Table
+                        </Link>
+                    </div>
 
-                    {isLogin &&
-                        <div className={'h-6 w-auto cursor-pointer '}>
-                            <Link to={"/projects"}>
-                                PROJECTS
-                            </Link>
-                        </div>
-                    }
+                    <div className={'h-6 w-auto cursor-pointer '}
+                         onClick={() => setMenuOpened(false)}
+                    >
+                        <Link to={"/chair"}>
+                            Chair
+                        </Link>
+                    </div>
 
-                    {isLogin &&
-                        <div className={'h-6 w-auto cursor-pointer '}>
-                            <Link to={"/renders"}>
-                                RENDERS
-                            </Link>
-                        </div>
-                    }
+                    <div className={'h-6 w-auto cursor-pointer '}
+                         onClick={() => setMenuOpened(false)}
+                    >
+                        <Link to={"/rack"}>
+                            Rack
+                        </Link>
+                    </div>
+
+                    <div className={'h-6 w-auto cursor-pointer '}
+                         onClick={() => setMenuOpened(false)}
+                    >
+                        <Link to={"/lamp"}>
+                            Lamp
+                        </Link>
+                    </div>
+
+                    <div className={'h-6 w-auto cursor-pointer'}>
+                        <a href="http://web3ddd.com"
+                           target="_blank"
+                           onClick={() => setMenuOpened(false)}
+                        >
+                            3ddd
+                        </a>
+                    </div>
 
                 </div>
             </div>
-
         </>
-    );
-};
+    )
+}

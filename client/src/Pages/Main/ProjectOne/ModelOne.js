@@ -29,23 +29,23 @@ const ModelOne = () => {
         mod.current.position.z = -0.5
         tl.current
 
-            .to(mod.current.position, {y: 3}, 0)
-            .to(mod.current.rotation, {y: 1}, 0)
+            .to(mod.current.position, {y: 24}, 0)
+            .to(mod.current.rotation, {y: -11}, 0)
 
-            .to(mod.current.position, {y: 7}, 2)
-            .to(mod.current.rotation, {y: -2}, 2)
+            // .to(mod.current.position, {y: 7}, 2)
+            // .to(mod.current.rotation, {y: -2}, 2)
+            //
+            // .to(mod.current.position, {y: 10}, 4)
+            // .to(mod.current.rotation, {y: -1}, 4)
+            //
+            // .to(mod.current.position, {y: 14}, 6)
+            // .to(mod.current.rotation, {y: -1}, 6)
+            //
+            // .to(mod.current.position, {y: 18.5}, 10)
+            // .to(mod.current.rotation, {y: -1.7}, 10)
 
-            .to(mod.current.position, {y: 10}, 4)
-            .to(mod.current.rotation, {y: -1}, 4)
-
-            .to(mod.current.position, {y: 14}, 6)
-            .to(mod.current.rotation, {y: -1}, 6)
-
-            .to(mod.current.position, {y: 18.5}, 10)
-            .to(mod.current.rotation, {y: -1.7}, 10)
-
-            .to(mod.current.position, {y: 24.5}, 13)
-            .to(mod.current.rotation, {y: -0.7}, 13)
+            // .to(mod.current.position, {y: 24.5}, 13)
+            // .to(mod.current.rotation, {y: -0.7}, 13)
 
     }, [])
 

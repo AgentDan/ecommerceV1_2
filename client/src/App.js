@@ -2,39 +2,36 @@ import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import {AuthContext} from './context/AuthContext'
 import {useAuth} from "./hooks/auth.hook"
-// import Header from "./Pages/Header/Header";
-import PrivatRouter from "./router/PRouter";
-import MainPage from "./Pages/Main/MainPage";
-import SignIn from "./Pages/SignIn/SignIn";
-import SignUp from "./Pages/SignUp/SignUp";
-import Projects from "./Pages/Ptojects/Projects";
-import Layout from "./Pages/Layout/Layout";
-import Renders from "./Pages/Renders/Renders";
+import MainPage from "./Pages/Main/MainPage"
+import Table from "./Pages/Table/Table"
+import Chair from "./Pages/Chair/Chair"
+import {Menu} from "./Pages/Menu/Menu";
+import {useState} from "react";
+import Rack from "./Pages/Rack/Rack";
+import Lamp from "./Pages/Lamp/Lamp";
 
 function App() {
     const {login, logout, token, userId, isReady, logoName} = useAuth()
     const isLogin = !!token
+    const [menuOpened, setMenuOpened] = useState(false)
 
     return (
         <AuthContext.Provider value={{login, logout, token, userId, isReady, isLogin, logoName}}>
             <div>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Layout isLogin={isLogin}/>}>
-                            <Route element={<PrivatRouter/>}>
-                                <Route path="/projects" element={<Projects/>}/>
-                                <Route path="/renders" element={<Renders/>}/>
-                            </Route>
-                            <Route path="/" element={<MainPage isLogin={isLogin}/>}/>
-                            <Route path="/login" element={<SignIn/>}/>
-                            <Route path="/registration" element={<SignUp/>}/>
-                            <Route path="*" element={<MainPage isLogin={isLogin}/>}/>
-                        </Route>
+                            <Route path="/" element={<MainPage/>}/>
+                            <Route path="/table" element={<Table setMenuOpened={setMenuOpened}/>}/>
+                            <Route path="/chair" element={<Chair/>}/>
+                            <Route path="/rack" element={<Rack/>}/>
+                            <Route path="/lamp" element={<Lamp/>}/>
+                            <Route path="*" element={<MainPage/>}/>
                     </Routes>
+                    <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin}/>
                 </BrowserRouter>
             </div>
         </AuthContext.Provider>
-    );
+    )
 }
 
-export default App;
+export default App
