@@ -9,7 +9,7 @@ const MainPage = ({isLogin}) => {
 
     return (
         <>
-            <Canvas camera={{fov: 54, position: [5, 0, 1]}}>
+            <Canvas camera={{fov: 54, position: [2, 1, 5]}}>
                 <ProjectOne/>
             </Canvas>
             <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin}/>
