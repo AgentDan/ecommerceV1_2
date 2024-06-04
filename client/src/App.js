@@ -21,7 +21,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                             <Route path="/" element={<MainPage/>}/>
-                            <Route path="/table" element={<Table setMenuOpened={setMenuOpened}/>}/>
+                            <Route path="/table" element={<Table/>}/>
                             <Route path="/chair" element={<Chair/>}/>
                             <Route path="/rack" element={<Rack/>}/>
                             <Route path="/lamp" element={<Lamp/>}/>

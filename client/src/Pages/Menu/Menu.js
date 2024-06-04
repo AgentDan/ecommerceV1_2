@@ -12,7 +12,6 @@ export const Menu = (props) => {
         navigate('/')
     }
 
-
     return (
         <>
             <button
@@ -48,34 +47,34 @@ export const Menu = (props) => {
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}
-                         onClick={() => setMenuOpened(false)}
-                    >
-                        <Link to={"/table"}>
+                    <div className={'h-6 w-auto cursor-pointer '}>
+                        <Link to={"/table"}
+                              onClick={() => setMenuOpened(false)}
+                        >
                             Table
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}
-                         onClick={() => setMenuOpened(false)}
-                    >
-                        <Link to={"/chair"}>
+                    <div className={'h-6 w-auto cursor-pointer '}>
+                        <Link to={"/chair"}
+                              onClick={() => setMenuOpened(false)}
+                        >
                             Chair
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}
-                         onClick={() => setMenuOpened(false)}
-                    >
-                        <Link to={"/rack"}>
+                    <div className={'h-6 w-auto cursor-pointer '}>
+                        <Link to={"/rack"}
+                              onClick={() => setMenuOpened(false)}
+                        >
                             Rack
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}
-                         onClick={() => setMenuOpened(false)}
-                    >
-                        <Link to={"/lamp"}>
+                    <div className={'h-6 w-auto cursor-pointer '}>
+                        <Link to={"/lamp"}
+                              onClick={() => setMenuOpened(false)}
+                        >
                             Lamp
                         </Link>
                     </div>
