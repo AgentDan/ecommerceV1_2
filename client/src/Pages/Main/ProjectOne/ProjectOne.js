@@ -10,7 +10,7 @@ function ProjectOne () {
             <ScrollControls pages={5} damping={0.2}>
 
                 <ModelOne/>
-                <color attach="background" args={["#000000"]}/>
+                <color attach="background" args={["#808080"]}/>
 
                 <Scroll html style={{width: '100%'}}>
                     <h1 style={{

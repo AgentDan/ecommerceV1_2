@@ -1,16 +1,7 @@
-import {useContext} from "react"
 import {Link} from "react-router-dom"
-import {AuthContext} from "../../context/AuthContext"
-import {useNavigate} from "react-router-dom"
 
 export const Menu = (props) => {
-    const {menuOpened, setMenuOpened, isLogin} = props
-    const navigate = useNavigate()
-    const {logout} = useContext(AuthContext)
-    const logOutHandler = () => {
-        if (logout) logout()
-        navigate('/')
-    }
+    const {menuOpened, setMenuOpened} = props
 
     return (
         <>
