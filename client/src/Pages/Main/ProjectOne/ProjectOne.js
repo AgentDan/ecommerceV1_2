@@ -10,11 +10,11 @@ function ProjectOne () {
             <ScrollControls pages={5} damping={0.2}>
 
                 <ModelOne/>
-                <color attach="background" args={["#808080"]}/>
+                <color attach="background" args={["#f9f9fa"]}/>
 
                 <Scroll html style={{width: '100%'}}>
                     <h1 style={{
-                        color: '#87CEEB',
+                        color: '#ff0000',
                         position: 'absolute',
                         top: `65vh`,
                         left: '50%',
@@ -26,7 +26,7 @@ function ProjectOne () {
 
                     <div style={{position: 'absolute', top: `132vh`}}>
                         <h1 style={{
-                            color: '#87CEEB',
+                            color: '#ff0000',
                             position: 'absolute',
                             top: `65vh`,
                             left: '50%',
@@ -35,12 +35,11 @@ function ProjectOne () {
                         }}>
                             Добродошли
                         </h1>
-
                     </div>
 
                     <div style={{position: 'absolute', top: `264vh`}}>
                         <h1 style={{
-                            color: '#87CEEB',
+                            color: '#ff0000',
                             position: 'absolute',
                             top: `65vh`,
                             left: '50%',

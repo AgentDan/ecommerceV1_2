@@ -38,13 +38,13 @@ export const Menu = (props) => {
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}>
-                        <Link to={"/table"}
-                              onClick={() => setMenuOpened(false)}
-                        >
-                            Table
-                        </Link>
-                    </div>
+                    {/*<div className={'h-6 w-auto cursor-pointer '}>*/}
+                    {/*    <Link to={"/table"}*/}
+                    {/*          onClick={() => setMenuOpened(false)}*/}
+                    {/*    >*/}
+                    {/*        Table*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
 
                     <div className={'h-6 w-auto cursor-pointer '}>
                         <Link to={"/chair"}
@@ -54,21 +54,21 @@ export const Menu = (props) => {
                         </Link>
                     </div>
 
-                    <div className={'h-6 w-auto cursor-pointer '}>
-                        <Link to={"/rack"}
-                              onClick={() => setMenuOpened(false)}
-                        >
-                            Rack
-                        </Link>
-                    </div>
+                    {/*<div className={'h-6 w-auto cursor-pointer '}>*/}
+                    {/*    <Link to={"/rack"}*/}
+                    {/*          onClick={() => setMenuOpened(false)}*/}
+                    {/*    >*/}
+                    {/*        Rack*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
 
-                    <div className={'h-6 w-auto cursor-pointer '}>
-                        <Link to={"/lamp"}
-                              onClick={() => setMenuOpened(false)}
-                        >
-                            Lamp
-                        </Link>
-                    </div>
+                    {/*<div className={'h-6 w-auto cursor-pointer '}>*/}
+                    {/*    <Link to={"/lamp"}*/}
+                    {/*          onClick={() => setMenuOpened(false)}*/}
+                    {/*    >*/}
+                    {/*        Lamp*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
 
                     <div className={'h-6 w-auto cursor-pointer'}>
                         <a href="http://web3ddd.com"
