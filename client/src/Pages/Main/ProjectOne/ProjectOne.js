@@ -2,7 +2,8 @@ import {Environment, OrbitControls, Scroll, ScrollControls} from "@react-three/d
 import './ProjectOne.css'
 import ModelOne from "./ModelOne.js"
 
-function ProjectOne () {
+function ProjectOne({currentLang}) {
+    console.log(currentLang)
     return (
         <>
             <Environment preset='warehouse'/>
@@ -21,7 +22,9 @@ function ProjectOne () {
                         fontSize: '4em',
                         transform: `translate(-50%,-50%)`
                     }}>
-                        Welcome
+                        {currentLang === "en" ? "Welcome" : ""}
+                        {currentLang === "rs" ? "Добродошли" : ""}
+                        {currentLang === "ru" ? "Привет" : ""}
                     </h1>
 
                     <div style={{position: 'absolute', top: `132vh`}}>
@@ -33,7 +36,9 @@ function ProjectOne () {
                             fontSize: '4em',
                             transform: `translate(-50%,-50%)`
                         }}>
-                            Добродошли
+                            {currentLang === "en" ? "Welcome" : ""}
+                            {currentLang === "rs" ? "Добродошли" : ""}
+                            {currentLang === "ru" ? "Привет" : ""}
                         </h1>
                     </div>
 
@@ -46,7 +51,9 @@ function ProjectOne () {
                             fontSize: '4em',
                             transform: `translate(-50%,-50%)`
                         }}>
-                            Добро пожаловать
+                            {currentLang === "en" ? "Welcome" : ""}
+                            {currentLang === "rs" ? "Добродошли" : ""}
+                            {currentLang === "ru" ? "Привет" : ""}
                         </h1>
                     </div>
 

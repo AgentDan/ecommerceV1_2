@@ -14,15 +14,16 @@ function App() {
     const {login, logout, token, userId, isReady, logoName} = useAuth()
     const isLogin = !!token
     const [menuOpened, setMenuOpened] = useState(false)
+    const [currentLang, setCurrentLang] = useState("en")
 
     return (
         <AuthContext.Provider value={{login, logout, token, userId, isReady, isLogin, logoName}}>
             <div>
                 <BrowserRouter>
                     <Routes>
-                            <Route path="/" element={<MainPage/>}/>
+                            <Route path="/" element={<MainPage currentLang={currentLang} setCurrentLang={setCurrentLang}/>}/>
                             <Route path="/table" element={<Table/>}/>
-                            <Route path="/chair" element={<Chair/>}/>
+                            <Route path="/chair" element={<Chair currentLang={currentLang}/>}/>
                             <Route path="/rack" element={<Rack/>}/>
                             <Route path="/lamp" element={<Lamp/>}/>
                             <Route path="*" element={<MainPage/>}/>
