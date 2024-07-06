@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contacts = () => {
     const shareUrlWhatsapp = "https://api.whatsapp.com/send?phone=79221136549"
-    const shareUrlViber = "viber://chat?number=+79221136549"
+    const shareUrlViber = "viber://chat?number=79221136549"
     const shareUrlTelegram = "https://telegram.im/@krunastena"
     const shareUrlInstagramm = "https://www.instagram.com/loft.srb?utm_source=qr&igsh=NXlpYWowNDhkMDRn"
     return (
