@@ -8,7 +8,7 @@ const Contacts = () => {
     return (
         <div className="fixed flex flex-row gap-2 top-4 right-1 w-44 h-8">
 
-            <div className="w-8 h-8">
+            <div className="w-8 h-8 cursor-pointer">
                 <a className="cursor-pointer"
                    href={shareUrlWhatsapp}
                    target="_blank"

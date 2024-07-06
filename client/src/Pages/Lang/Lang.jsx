@@ -3,7 +3,7 @@ import React from 'react';
 const Lang = ({currentLang, setCurrentLang}) => {
 
     return (
-        <div className="justify-stretch z-20 fixed top-3 right-36 p-2 w-36 h-10 "
+        <div className="justify-stretch z-20 fixed top-3 right-48 p-2 w-24 h-10"
         >
             <a className={`text-xl rounded cursor-pointer p-1 ${currentLang === "en" ? "bg-gray-300 text-red-600" : ""}`}
                onClick={() => setCurrentLang("en")}
