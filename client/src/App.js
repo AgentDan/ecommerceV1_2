@@ -9,6 +9,7 @@ import {Menu} from "./Pages/Menu/Menu";
 import {useState} from "react";
 import Rack from "./Pages/Rack/Rack";
 import Lamp from "./Pages/Lamp/Lamp";
+import Contacts from "./Pages/Contacts/Contacts";
 
 function App() {
     const {login, logout, token, userId, isReady, logoName} = useAuth()
@@ -21,14 +22,17 @@ function App() {
             <div>
                 <BrowserRouter>
                     <Routes>
-                            <Route path="/" element={<MainPage currentLang={currentLang} setCurrentLang={setCurrentLang}/>}/>
-                            <Route path="/table" element={<Table/>}/>
-                            <Route path="/chair" element={<Chair currentLang={currentLang}/>}/>
-                            <Route path="/rack" element={<Rack/>}/>
-                            <Route path="/lamp" element={<Lamp/>}/>
-                            <Route path="*" element={<MainPage/>}/>
+                        <Route path="/"
+                               element={<MainPage currentLang={currentLang} setCurrentLang={setCurrentLang}/>}/>
+                        <Route path="/table" element={<Table/>}/>
+                        <Route path="/chair" element={<Chair currentLang={currentLang}/>}/>
+                        <Route path="/rack" element={<Rack/>}/>
+                        <Route path="/lamp" element={<Lamp/>}/>
+                        <Route path="/contacts" element={<Contacts/>}/>
+                        <Route path="*" element={<MainPage/>}/>
                     </Routes>
                     <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin}/>
+                    <Contacts/>
                 </BrowserRouter>
             </div>
         </AuthContext.Provider>
