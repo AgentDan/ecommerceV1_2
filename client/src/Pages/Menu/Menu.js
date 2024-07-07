@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 
 export const Menu = (props) => {
-    const {menuOpened, setMenuOpened} = props
+    const {menuOpened, setMenuOpened, currentLang} = props
 
     return (
         <>
@@ -34,7 +34,9 @@ export const Menu = (props) => {
                         <Link to={"/"}
                               onClick={() => setMenuOpened(false)}
                         >
-                            HOME
+                            {currentLang === "en" ? "HOME" : ""}
+                            {currentLang === "rs" ? "POCETNA" : ""}
+                            {currentLang === "ru" ? "НА ГЛАВНУЮ" : ""}
                         </Link>
                     </div>
 
@@ -42,7 +44,19 @@ export const Menu = (props) => {
                         <Link to={"/chair"}
                               onClick={() => setMenuOpened(false)}
                         >
-                            CHAIR
+                            {currentLang === "en" ? "Furniture" : ""}
+                            {currentLang === "rs" ? "Namestaj" : ""}
+                            {currentLang === "ru" ? "Мебель" : ""}
+                        </Link>
+                    </div>
+
+                    <div className={'h-6 w-auto cursor-pointer text-xl'}>
+                        <Link to={"/lamp"}
+                              onClick={() => setMenuOpened(false)}
+                        >
+                            {currentLang === "en" ? "Lamps" : ""}
+                            {currentLang === "rs" ? "Lampe" : ""}
+                            {currentLang === "ru" ? "Светильники" : ""}
                         </Link>
                     </div>
 
@@ -51,7 +65,9 @@ export const Menu = (props) => {
                            target="_blank"
                            onClick={() => setMenuOpened(false)}
                         >
-                            3-DDD
+                            {currentLang === "en" ? "3d designer" : ""}
+                            {currentLang === "rs" ? "3d konstruktor" : ""}
+                            {currentLang === "ru" ? "3d конструктор" : ""}
                         </a>
                     </div>
 
