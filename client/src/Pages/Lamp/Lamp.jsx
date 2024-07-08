@@ -23,7 +23,7 @@ const Lamp = ({currentLang}) => {
                 <div  key={i.id}>
                     {i.foto ?
                         <ReactCardFlip isFlipped={i.check} flipDirection={"horizontal"}>
-                            <div className="card h-5/6">
+                            <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col">
                                     <div className="rounded-xl overflow-hidden xs:h-full">
                                         <img src={i.foto} alt="" className="h-auto w-auto "/>
@@ -39,7 +39,7 @@ const Lamp = ({currentLang}) => {
                                 </div>
                             </div>
 
-                            <div className="card h-5/6">
+                            <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col">
                                     <div className="rounded-xl overflow-hidden xs:h-full">
                                         <img src={i.render} alt="" className="h-auto w-auto "/>
@@ -56,7 +56,7 @@ const Lamp = ({currentLang}) => {
                             </div>
                         </ReactCardFlip>
                         :
-                        <div className="card h-5/6">
+                        <div className="card h-5/6 bg-white">
                             <div className="p-5 flex flex-col">
                                 <div className="rounded-xl overflow-hidden xs:h-full">
                                     <img src={i.render} alt="" className="h-auto w-auto "/>
@@ -78,11 +78,11 @@ const Lamp = ({currentLang}) => {
 
     return (
         <>
-            <div className="flex items-center justify-center container mx-auto">
+            <div className="flex items-center justify-center mx-auto h-auto w-screen bg-yellow-50">
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
 
-                    {comp}
+                {comp}
 
                 </div>
             </div>
