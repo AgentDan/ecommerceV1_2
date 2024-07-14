@@ -32,6 +32,11 @@ const ModelOne = () => {
             .to(mod.current.position, {y: 24}, 0)
             .to(mod.current.rotation, {y: -11}, 0)
 
+            // .to(mod.current.position, {z: 3}, 0)
+            // .to(mod.current.position, {y: 3}, 0)
+            // .to(mod.current.rotation, {y: 13}, 0)
+            // .to(mod.current.rotation, {y: 5}, 5)
+
             // .to(mod.current.position, {y: 7}, 2)
             // .to(mod.current.rotation, {y: -2}, 2)
             //

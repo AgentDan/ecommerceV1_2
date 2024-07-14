@@ -8,6 +8,7 @@ import {Menu} from "./Pages/Menu/Menu";
 import {useState} from "react";
 import Lamp from "./Pages/Lamp/Lamp";
 import Contacts from "./Pages/Contacts/Contacts";
+import Proba from "./Pages/Proba/Proba";
 
 function App() {
     const {login, logout, token, userId, isReady, logoName} = useAuth()
@@ -25,6 +26,7 @@ function App() {
                         <Route path="/chair" element={<Chair currentLang={currentLang}/>}/>
                         <Route path="/lamp" element={<Lamp currentLang={currentLang}/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>
+                        <Route path="/proba" element={<Proba/>}/>
                         <Route path="*" element={<MainPage/>}/>
                     </Routes>
                     <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin} currentLang={currentLang}/>

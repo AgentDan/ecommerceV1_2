@@ -5,7 +5,7 @@ const Chair = ({currentLang}) => {
     const [components, setComponents] = useState([
         {
             id: 0,
-            price: "100",
+            price: "200",
             descriptionEN: "",
             descriptionRS: "",
             descriptionRU: "Металл 1.8мм., полимерно-порошковая краска. Габаритные размеры 1000x300x320.",
@@ -91,6 +91,8 @@ const Chair = ({currentLang}) => {
     const clickFlipped = (id, check) => {
         setComponents(components.map(t => t.id === id ? {...t, check} : t))
     }
+    const [open, setOpen] = useState(false)
+    const [fullScreenImgPath, setFullScreenImgPath] = useState("")
 
     const comp =
         components.map((i, index) => {
@@ -98,15 +100,25 @@ const Chair = ({currentLang}) => {
             const onClickButton = () => {
                 clickFlipped(i.id, !i.check)
             }
+            const onClickFullScreenImg = (pathFullScreenImg) => {
+                setOpen(true)
+                setFullScreenImgPath(pathFullScreenImg)
+            }
+
             return (
                 <div key={i.id}>
                     {i.foto ?
                         <ReactCardFlip isFlipped={i.check} flipDirection={"horizontal"}>
                             <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col ">
+
                                     <div className="rounded-xl overflow-hidden xs:h-full">
-                                        <img src={i.foto} alt="" className="h-auto w-auto "/>
+                                        <img src={i.foto} alt=""
+                                             className="h-auto w-auto "
+                                             onClick={() => onClickFullScreenImg(i.foto)}
+                                        />
                                     </div>
+
                                     <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
                                     <div className="h-12 text-xs">{i.descriptionRU}</div>
                                     <a
@@ -123,7 +135,11 @@ const Chair = ({currentLang}) => {
                             <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col">
                                     <div className="rounded-xl overflow-hidden xs:h-full">
-                                        <img src={i.render} alt="" className="h-auto w-auto "/>
+                                        <img src={i.render}
+                                             alt=""
+                                             className="h-auto w-auto "
+                                             onClick={() => onClickFullScreenImg(i.render)}
+                                        />
                                     </div>
                                     <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
                                     <div className="h-12 text-xs">{i.descriptionRU}</div>
@@ -142,7 +158,11 @@ const Chair = ({currentLang}) => {
                         <div className="card h-5/6 bg-white">
                             <div className="p-5 flex flex-col">
                                 <div className="rounded-xl overflow-hidden xs:h-full">
-                                    <img src={i.render} alt="" className="h-auto w-auto "/>
+                                    <img src={i.render}
+                                         alt=""
+                                         className="h-auto w-auto "
+                                         onClick={() => onClickFullScreenImg(i.render)}
+                                    />
                                 </div>
                                 <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
                                 <div className="h-12 text-xs">{i.descriptionRU}</div>
@@ -156,19 +176,40 @@ const Chair = ({currentLang}) => {
                                 </a>
                             </div>
                         </div>
+
                     }
                 </div>
             )
         })
 
+    const fullScreen = (screen, number) => {
+        // const fullScreenRender = "111"
+        console.log(screen)
+        console.log(number)
+        return (
+            <div>1111</div>
+        )
+        return (
+            <div
+                onClick={() => setOpen(false)}
+                className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/20" : "invisible"} `}
+            >
+                <img src={screen} alt="" className="h-full w-auto"/>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className="flex items-center justify-center mx-auto h-auto w-screen bg-blue-50">
-
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
-
                     {comp}
-
+                    <div
+                        onClick={() => setOpen(false)}
+                        className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/50" : "invisible"} `}
+                    >
+                        <img src={fullScreenImgPath} alt="" className="h-full w-auto"/>
+                    </div>
                 </div>
             </div>
         </>

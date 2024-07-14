@@ -8,7 +8,7 @@ function ProjectOne({currentLang}) {
         <>
             <Environment preset='warehouse'/>
 
-            <ScrollControls pages={5} damping={0.2}>
+            <ScrollControls pages={4} damping={0.2}>
 
                 <ModelOne/>
                 <color attach="background" args={["#f9f9fa"]}/>
