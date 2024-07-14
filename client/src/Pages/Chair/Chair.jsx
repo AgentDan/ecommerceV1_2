@@ -1,5 +1,6 @@
 import ReactCardFlip from "react-card-flip"
 import {useState} from "react"
+// import {v1} from "uuid"
 
 const Chair = ({currentLang}) => {
     const [components, setComponents] = useState([
@@ -111,14 +112,12 @@ const Chair = ({currentLang}) => {
                         <ReactCardFlip isFlipped={i.check} flipDirection={"horizontal"}>
                             <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col ">
-
                                     <div className="rounded-xl overflow-hidden xs:h-full">
                                         <img src={i.foto} alt=""
                                              className="h-auto w-auto "
                                              onClick={() => onClickFullScreenImg(i.foto)}
                                         />
                                     </div>
-
                                     <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
                                     <div className="h-12 text-xs">{i.descriptionRU}</div>
                                     <a
@@ -131,7 +130,6 @@ const Chair = ({currentLang}) => {
                                     </a>
                                 </div>
                             </div>
-
                             <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col">
                                     <div className="rounded-xl overflow-hidden xs:h-full">
@@ -176,28 +174,10 @@ const Chair = ({currentLang}) => {
                                 </a>
                             </div>
                         </div>
-
                     }
                 </div>
             )
         })
-
-    const fullScreen = (screen, number) => {
-        // const fullScreenRender = "111"
-        console.log(screen)
-        console.log(number)
-        return (
-            <div>1111</div>
-        )
-        return (
-            <div
-                onClick={() => setOpen(false)}
-                className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/20" : "invisible"} `}
-            >
-                <img src={screen} alt="" className="h-full w-auto"/>
-            </div>
-        )
-    }
 
     return (
         <>

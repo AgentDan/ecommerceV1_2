@@ -26,7 +26,7 @@ function App() {
                         <Route path="/chair" element={<Chair currentLang={currentLang}/>}/>
                         <Route path="/lamp" element={<Lamp currentLang={currentLang}/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>
-                        <Route path="/proba" element={<Proba/>}/>
+                        {/*<Route path="/proba" element={<Proba/>}/>*/}
                         <Route path="*" element={<MainPage/>}/>
                     </Routes>
                     <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} isLogin={isLogin} currentLang={currentLang}/>

@@ -1,7 +1,11 @@
+import React from 'react';
+
 const Proba = () => {
     return (
-        <div>HHH</div>
-    )
-}
+        <div>
 
-export default Proba
+        </div>
+    );
+};
+
+export default Proba;

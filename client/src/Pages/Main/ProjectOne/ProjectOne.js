@@ -3,7 +3,6 @@ import './ProjectOne.css'
 import ModelOne from "./ModelOne.js"
 
 function ProjectOne({currentLang}) {
-    console.log(currentLang)
     return (
         <>
             <Environment preset='warehouse'/>
