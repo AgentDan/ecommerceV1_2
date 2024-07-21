@@ -7,7 +7,7 @@ import {Experience} from "./Experience"
 
 const Projects = () => {
     const {path} = useParams()
-    const [myElements, setMyElements] = useState(Statetwo[0].components)
+    const [myElements, setMyElements] = useState(Statetwo[path].components)
     return (
         <>
             <Canvas shadows camera={{ position: [4, 4, -12], fov: 35 }}>
