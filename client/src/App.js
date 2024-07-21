@@ -25,7 +25,7 @@ function App() {
                                element={<MainPage currentLang={currentLang} setCurrentLang={setCurrentLang} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>}/>
                         <Route path="/chair" element={<Chair currentLang={currentLang} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>}/>
                         <Route path="/lamp" element={<Lamp currentLang={currentLang} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>}/>
-                        <Route path="/project/:path" element={<Projects/>}/>
+                        <Route path="/project" element={<Projects/>}/>
                         <Route path="/proba/:path" element={<Proba/>}/>
                         <Route path="*" element={<MainPage currentLang={currentLang} setCurrentLang={setCurrentLang} menuOpened={menuOpened} setMenuOpened={setMenuOpened}/>}/>
                     </Routes>
