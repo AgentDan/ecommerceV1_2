@@ -94,7 +94,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                                         />
                                     </div>
                                         <Link to={`/project`}
-                                              target="_blank"
+                                              // target="_blank"
                                               className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
                                         >
                                             <span className="text-xs">3d designer : </span>

@@ -6,15 +6,14 @@ import {Canvas} from "@react-three/fiber"
 import {Experience} from "./Experience"
 
 const Projects = () => {
-    // const {path} = useParams()
-    // const [myElements, setMyElements] = useState(Statetwo[0].components)
+    const {path} = useParams()
+    const [myElements, setMyElements] = useState(Statetwo[0].components)
     return (
         <>
-            HELLO
-            {/*<Canvas shadows camera={{ position: [4, 4, -12], fov: 35 }}>*/}
-            {/*    <Experience myElements={myElements}/>*/}
-            {/*</Canvas>*/}
-            {/*<PanelElementsVariantsTailwindMax myElements={myElements} setMyElements={setMyElements}/>*/}
+            <Canvas shadows camera={{ position: [4, 4, -12], fov: 35 }}>
+                <Experience myElements={myElements}/>
+            </Canvas>
+            <PanelElementsVariantsTailwindMax myElements={myElements} setMyElements={setMyElements}/>
         </>
     )
 }
