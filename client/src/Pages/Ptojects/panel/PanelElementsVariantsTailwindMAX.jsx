@@ -16,6 +16,7 @@ const PanelElementsVariantsTailwindMax = ({myElements, setMyElements}) => {
                                 className="w-48 text-sm font-medium text-gray-900 h-5 cursor-pointer"
                                 key={v1()}
                             >
+
                                 <span
                                     className={i.check === true ? "bg-gray-400 text-white" : ""}
                                     onClick={e => myOnClick(i.id)}
