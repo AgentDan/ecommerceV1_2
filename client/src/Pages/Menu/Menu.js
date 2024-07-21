@@ -26,11 +26,10 @@ export const Menu = (props) => {
                 />
             </button>
             <div
-                className={`z-10 fixed top-0 right-0 bottom-0 backdrop-blur-sm transition-all overflow-hidden flex flex-col ${menuOpened ? "w-80" : "w-0"}`}
+                className={`z-10 fixed top-16 right-0 bottom-0 backdrop-blur-sm transition-all overflow-hidden flex flex-col ${menuOpened ? "w-80" : "w-0"}`}
             >
                 <div className="flex items-center justify-start flex-col gap-6 p-8 font-bold text-black">
-
-                    <div className={'h-6 w-auto cursor-pointer mt-28 text-xl'}>
+                    <div className={'h-6 w-auto cursor-pointer text-xl'}>
                         <Link to={"/"}
                               onClick={() => setMenuOpened(false)}
                         >

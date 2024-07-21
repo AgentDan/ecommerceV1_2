@@ -1,14 +1,16 @@
-import React, {useEffect} from 'react';
-import {useConfiguratorRender} from "../../../context/ConfiguratorRender.jsx"
+import React, {useContext, useEffect} from 'react'
+import PanelElementsVariantsTailwindMax from "./PanelElementsVariantsTailwindMAX.jsx"
+import {AuthContext} from "../../../context/AuthContext"
 
-import PanelElementsVariantsTailwindMax from "./PanelElementsVariantsTailwindMAX.jsx";
-
-const PanelElementsTailwindMax = () => {
-    const {setAllElem, allElem, arr, allProjects, idProject} = useConfiguratorRender()
+const PanelElementsTailwindMax = ({myElements, setMyElements}) => {
+    // const {allProjects, allElem, setAllElem, idProject} = useContext(AuthContext)
 
     let allElements
     for (let i = 0; i < allProjects.length; i++) {
-        if (allProjects[i].id === idProject) {
+        // if (allProjects[i].id === idProject)
+
+        if (myElements[i].nameProject === "desk")
+        {
             allElements = allProjects[i].components
         }
     }

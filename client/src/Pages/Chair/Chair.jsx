@@ -1,93 +1,64 @@
 import ReactCardFlip from "react-card-flip"
 import {useState} from "react"
-// import {v1} from "uuid"
+import {useNavigate, Link} from "react-router-dom";
+import Contacts from "../Contacts/Contacts";
+import {Menu} from "../Menu/Menu";
 
-const Chair = ({currentLang}) => {
+const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
     const [components, setComponents] = useState([
         {
             id: 0,
             price: "200",
             descriptionEN: "",
             descriptionRS: "",
-            descriptionRU: "Металл 1.8мм., полимерно-порошковая краска. Габаритные размеры 1000x300x320.",
+            descriptionRU: "desctiption RU",
+            path3D: "lamp3Dbeton",
+            login3d: "lamp",
+            pass3d: "demo",
             nameEN: "SHAIR",
             nameRS: "ПОЛИЦА",
             nameRU: "ПОЛКА",
-            foto: "./fotos/chairFoto1.jpg",
-            render: "./fotos/chairRender1.png",
+            foto: "./fotos/lamp1foto.png",
+            render: "./fotos/lamp1render.png",
             check: true
         },
         {
             id: 1,
-            price: "100",
-            nameEN: "CONCRETE COUNTERTOP",
-            nameRS: "БЕТОНСКА ПЛОЧА",
-            nameRU: "СТОЛЕШНИЦА ИЗ БЕТОНА",
-            foto: "",
-            render: "./fotos/chairRender4.png",
+            price: "250",
+            descriptionEN: "",
+            descriptionRS: "",
+            descriptionRU: "desctiption RU",
+            path3D: "lamp3Dwood",
+            login3d: "lampwood",
+            pass3d: "demo",
+            nameEN: "LAMP WOOD",
+            nameRS: "ПОЛИЦА",
+            nameRU: "ЛАМПА ИЗ БРУСА",
+            foto: "./fotos/lamp1foto.png",
+            render: "./fotos/lamp2render.png",
             check: true
         },
         {
             id: 2,
-            price: "100",
-            nameEN: "COFFEE TABLE",
-            nameRS: "СТО ЗА КАФУ",
-            nameRU: "ЖУРНАЛЬНЫЙ СТОЛ",
-            foto: "./fotos/chairFoto2.jpg",
-            render: "./fotos/chairRender2.png",
-            check: true
-        },
-        {
-            id: 3,
-            price: "100",
             nameEN: "LAMP",
-            nameRS: "ЛАМП",
+            nameRS: "LAMP",
             nameRU: "СВЕТИЛЬНИК",
             foto: "",
-            render: "./fotos/chairRender5.png",
-            check: true
-        },
-        {
-            id: 4,
-            price: "100",
-            nameEN: "CLOSET",
-            nameRS: "ПЛАКАР",
-            nameRU: "ШКАФ",
-            foto: "",
-            render: "./fotos/chairRender6.png",
-            check: true
-        },
-        {
-            id: 5,
-            price: "100",
-            nameEN: "RACK",
-            nameRS: "РЕГАЛ",
-            nameRU: "СТЕЛЛАЖ",
-            foto: "./fotos/chairFoto3.jpg",
             render: "./fotos/chairRender3.png",
             check: true
         },
         {
-            id: 6,
-            price: "100",
-            nameEN: "DESIGNER LAMP",
-            nameRS: "ДИЗАJНЕРСКА ЛАМПА",
-            nameRU: "СВЕТИЛЬНИК ДИЗАЙНЕРСКИЙ",
+            id: 3,
+            nameEN: "LAMP",
+            nameRS: "LAMP",
+            nameRU: "СВЕТИЛЬНИК",
             foto: "",
-            render: "./fotos/chairRender7.png",
-            check: true
-        },
-        {
-            id: 7,
-            price: "100",
-            nameEN: "DECORATIVE PANELS",
-            nameRS: "ДЕКОРАТИВНИ ПАНЕЛИ",
-            nameRU: "ДЕКОРАТИВНЫЕ ПАНЕЛИ",
-            foto: "",
-            render: "./fotos/chairRender8.png",
+            render: "./fotos/chairRender2.png",
             check: true
         },
     ])
+
+    const navigate = useNavigate()
 
     const clickFlipped = (id, check) => {
         setComponents(components.map(t => t.id === id ? {...t, check} : t))
@@ -95,15 +66,19 @@ const Chair = ({currentLang}) => {
     const [open, setOpen] = useState(false)
     const [fullScreenImgPath, setFullScreenImgPath] = useState("")
 
+    const onClickDesignPath = (designPath3D) => {
+        navigate(`/designer`)
+    }
+    const onClickFullScreenImg = (pathFullScreenImg) => {
+        setOpen(true)
+        setFullScreenImgPath(pathFullScreenImg)
+    }
+
     const comp =
         components.map((i, index) => {
 
             const onClickButton = () => {
                 clickFlipped(i.id, !i.check)
-            }
-            const onClickFullScreenImg = (pathFullScreenImg) => {
-                setOpen(true)
-                setFullScreenImgPath(pathFullScreenImg)
             }
 
             return (
@@ -118,11 +93,26 @@ const Chair = ({currentLang}) => {
                                              onClick={() => onClickFullScreenImg(i.foto)}
                                         />
                                     </div>
-                                    <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
-                                    <div className="h-12 text-xs">{i.descriptionRU}</div>
+                                    <Link to={`/designer/${i.path3D}`} target="_blank">
+                                        <div
+                                            className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
+                                        >
+                                            AAAAAAAAA
+                                        </div>
+                                    </Link>
+                                    {/*<a*/}
+                                    {/*    className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"*/}
+                                    {/*    href="/design"*/}
+                                    {/*    target="_blank"*/}
+                                    {/*>*/}
+                                    {/*    <span className="text-xs">login:</span>*/}
+                                    {/*    <span className="text-xl">{i.login3d} </span>*/}
+                                    {/*    <span className="text-xs"> pass:</span>*/}
+                                    {/*    <span className="text-xl">{i.pass3d}</span>*/}
+                                    {/*</a>*/}
                                     <a
                                         onClick={onClickButton}
-                                        className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-auto text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
+                                        className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-12 text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
                                     >
                                         {currentLang === "en" ? i.nameEN : ""}
                                         {currentLang === "rs" ? i.nameRS : ""}
@@ -139,8 +129,10 @@ const Chair = ({currentLang}) => {
                                              onClick={() => onClickFullScreenImg(i.render)}
                                         />
                                     </div>
-                                    <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
-                                    <div className="h-12 text-xs">{i.descriptionRU}</div>
+                                    <div
+                                        className="h-12 text-3xl font-bold pt-1 text-center cursor-pointer rounded-lg">
+                                        {i.price} {'\u20AC'}
+                                    </div>
                                     <a
                                         onClick={onClickButton}
                                         className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-auto text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
@@ -177,13 +169,16 @@ const Chair = ({currentLang}) => {
                     }
                 </div>
             )
+
         })
 
     return (
         <>
             <div className="flex items-center justify-center mx-auto h-auto w-screen bg-blue-50">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
+
                     {comp}
+
                     <div
                         onClick={() => setOpen(false)}
                         className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/50" : "invisible"} `}
@@ -192,6 +187,8 @@ const Chair = ({currentLang}) => {
                     </div>
                 </div>
             </div>
+            <Contacts/>
+            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} currentLang={currentLang}/>
         </>
     )
 }

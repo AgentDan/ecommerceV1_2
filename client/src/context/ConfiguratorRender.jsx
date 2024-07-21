@@ -6,6 +6,7 @@ export const ConfiguratorProviderRender = ({children}) => {
 
     const [allElem, setAllElem] = useState([])
     const [idProject, setIdProject] = useState(false)
+
     return (
         <ConfiguratorContextRender.Provider
             value={{

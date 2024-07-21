@@ -1,21 +1,31 @@
 import {OrbitControls, Stage} from "@react-three/drei"
-import {Render} from "./render/Render.jsx"
+import React, {Suspense} from "react";
+import Box from "./render/Box";
+import {RenderElements} from "./render/RenderElements";
 
-export const Experience = () => {
+export const Experience = ({myElements}) => {
     return (
         <>
             <Stage
                 intensity={0.2}
                 environment="city"
-                shadows={{
-                    type: "accumulative",
-                    color: "#d9afd9",
-                    colorBlend: 2,
-                    opacity: 2,
-                }}
-                // adjustCamera={3}
+                // shadows={{
+                //     type: "accumulative",
+                //     color: "#d9afd9",
+                //     colorBlend: 2,
+                //     opacity: 2,
+                // }}
+                adjustCamera={2}
             >
-                <Render/>
+                <Suspense fallback={<Box/>}>
+                    {
+                        myElements.map((t) => {
+                            return (
+                                t.check && <RenderElements myPath={t.file}/>
+                            )
+                        })
+                    }
+                </Suspense>
             </Stage>
             <OrbitControls
                 makeDefault

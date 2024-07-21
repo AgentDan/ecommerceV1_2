@@ -1,17 +1,22 @@
 import {v1} from 'uuid'
-import {useNavigate} from "react-router-dom"
-
-import {useConfiguratorRender} from "../../../context/ConfiguratorRender.jsx"
+import { useNavigate} from "react-router-dom"
 import PanelElementsTailwindMax from "./PanelElementsTailwindMAX.jsx"
+import {useContext, useState} from "react";
+import {AuthContext} from "../../../context/AuthContext"
 
 const PanelProjectsTailwind = () => {
-    const {idProject, setIdProject, allProjects, setAllProjects} = useConfiguratorRender()
+    const {
+        allProjects,
+        setAllProjects,
+        idProject,
+        setIdProject,
+    } = useContext(AuthContext)
+
     const Navigator = useNavigate()
     const onChangeHandle = (idCurrentProject) => {
         setIdProject(idCurrentProject)
         setAllProjects(allProjects.map(t => t.id === idCurrentProject ? {...t, check: true} : {...t, check: false}))
     }
-
     const onClickHome = () => {
         setIdProject(false)
         Navigator('/')
@@ -31,7 +36,8 @@ const PanelProjectsTailwind = () => {
                                 className={t.check === true ? "bg-amber-400" : ""}
                                 onClick={e => onChangeHandle(t.id)}
                             >
-                                {t.nameProject}</span>
+                                {t.nameProject}
+                            </span>
                         </div>
                     )
                 })
@@ -47,10 +53,12 @@ const PanelProjectsTailwind = () => {
                 >
                     HOME
                 </div>
+
                 {radioProjects}
                 {idProject && <PanelElementsTailwindMax/>}
-            </div>
+                <PanelElementsTailwindMax/>
 
+            </div>
         </>
     )
 }
