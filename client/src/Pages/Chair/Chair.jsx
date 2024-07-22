@@ -12,7 +12,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
             descriptionEN: "",
             descriptionRS: "",
             descriptionRU: "desctiption RU",
-            path3D: "lamp3Dbeton",
+            path3D: 3,
             login3d: "lamp",
             pass3d: "demo",
             nameEN: "SHAIR",
@@ -28,7 +28,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
             descriptionEN: "",
             descriptionRS: "",
             descriptionRU: "desctiption RU",
-            path3D: "lamp3Dwood",
+            path3D: 2,
             login3d: "lampwood",
             pass3d: "demo",
             nameEN: "LAMP WOOD",
@@ -81,8 +81,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                 clickFlipped(i.id, !i.check)
             }
 
-            return (
-                <div key={i.id}>
+            return (<div key={i.id}>
                     {i.foto ?
                         <ReactCardFlip isFlipped={i.check} flipDirection={"horizontal"}>
                             <div className="card h-5/6 bg-white">
@@ -93,23 +92,17 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                                              onClick={() => onClickFullScreenImg(i.foto)}
                                         />
                                     </div>
-                                    <Link to={`/designer/${i.path3D}`} target="_blank">
-                                        <div
-                                            className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
-                                        >
-                                            AAAAAAAAA
-                                        </div>
+                                    <Link to={`/project/${i.path3D}`}
+                                        // target="_blank"
+                                          className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
+                                    >
+                                        <span className="text-xs">3d designer : </span>
+                                        <span className="text-xl">
+                                                {currentLang === "en" ? i.nameEN : ""}
+                                            {currentLang === "rs" ? i.nameRS : ""}
+                                            {currentLang === "ru" ? i.nameRU : ""}
+                                            </span>
                                     </Link>
-                                    {/*<a*/}
-                                    {/*    className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"*/}
-                                    {/*    href="/design"*/}
-                                    {/*    target="_blank"*/}
-                                    {/*>*/}
-                                    {/*    <span className="text-xs">login:</span>*/}
-                                    {/*    <span className="text-xl">{i.login3d} </span>*/}
-                                    {/*    <span className="text-xs"> pass:</span>*/}
-                                    {/*    <span className="text-xl">{i.pass3d}</span>*/}
-                                    {/*</a>*/}
                                     <a
                                         onClick={onClickButton}
                                         className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-12 text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
@@ -130,7 +123,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                                         />
                                     </div>
                                     <div
-                                        className="h-12 text-3xl font-bold pt-1 text-center cursor-pointer rounded-lg">
+                                        className="h-12 text-3xl font-bold pt-1 text-center rounded-lg">
                                         {i.price} {'\u20AC'}
                                     </div>
                                     <a
@@ -169,7 +162,6 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                     }
                 </div>
             )
-
         })
 
     return (

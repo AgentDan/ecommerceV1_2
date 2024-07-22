@@ -93,25 +93,25 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                                              onClick={() => onClickFullScreenImg(i.foto)}
                                         />
                                     </div>
-                                        <Link to={`/project/${i.path3D}`}
-                                              // target="_blank"
-                                              className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
-                                        >
-                                            <span className="text-xs">3d designer : </span>
-                                            <span className="text-xl">
+                                    <Link to={`/project/${i.path3D}`}
+                                        // target="_blank"
+                                          className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
+                                    >
+                                        <span className="text-xs">3d designer : </span>
+                                        <span className="text-xl">
                                                 {currentLang === "en" ? i.nameEN : ""}
-                                                {currentLang === "rs" ? i.nameRS : ""}
-                                                {currentLang === "ru" ? i.nameRU : ""}
-                                            </span>
-                                        </Link>
-                                        <a
-                                            onClick={onClickButton}
-                                            className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-12 text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
-                                        >
-                                            {currentLang === "en" ? i.nameEN : ""}
                                             {currentLang === "rs" ? i.nameRS : ""}
                                             {currentLang === "ru" ? i.nameRU : ""}
-                                        </a>
+                                            </span>
+                                    </Link>
+                                    <a
+                                        onClick={onClickButton}
+                                        className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer h-12 text-center text-white py-2 rounded-lg text-xl font-semibold mt-4 hover:bg-blue-300 focus:scale-95 transition-all"
+                                    >
+                                        {currentLang === "en" ? i.nameEN : ""}
+                                        {currentLang === "rs" ? i.nameRS : ""}
+                                        {currentLang === "ru" ? i.nameRU : ""}
+                                    </a>
                                 </div>
                             </div>
                             <div className="card h-5/6 bg-white">
@@ -140,50 +140,49 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                         </ReactCardFlip>
                         :
                         <div className="card h-5/6 bg-white">
-                        <div className="p-5 flex flex-col">
-                        <div className="rounded-xl overflow-hidden xs:h-full">
-                        <img src={i.render}
-                     alt=""
-                     className="h-auto w-auto "
-                     onClick={() => onClickFullScreenImg(i.render)}
-                />
-        </div>
-            <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
-            <div className="h-12 text-xs">{i.descriptionRU}</div>
-            <a
-                onClick={onClickButton}
-                className="h-auto text-center bg-gray-100 py-2 rounded-lg font-semibold mt-4 transition-all text-xl "
-            >
-                {currentLang === "en" ? i.nameEN : ""}
-                {currentLang === "rs" ? i.nameRS : ""}
-                {currentLang === "ru" ? i.nameRU : ""}
-            </a>
-        </div>
-        </div>
-        }
-        </div>
-        )
-
+                            <div className="p-5 flex flex-col">
+                                <div className="rounded-xl overflow-hidden xs:h-full">
+                                    <img src={i.render}
+                                         alt=""
+                                         className="h-auto w-auto "
+                                         onClick={() => onClickFullScreenImg(i.render)}
+                                    />
+                                </div>
+                                <div className="h-12 text-center text-3xl font-bold">{i.price} {'\u20AC'}</div>
+                                <div className="h-12 text-xs">{i.descriptionRU}</div>
+                                <a
+                                    onClick={onClickButton}
+                                    className="h-auto text-center bg-gray-100 py-2 rounded-lg font-semibold mt-4 transition-all text-xl "
+                                >
+                                    {currentLang === "en" ? i.nameEN : ""}
+                                    {currentLang === "rs" ? i.nameRS : ""}
+                                    {currentLang === "ru" ? i.nameRU : ""}
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            )
         })
 
-        return (
-            <>
-                <div className="flex items-center justify-center mx-auto h-auto w-screen bg-yellow-50">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
+    return (
+        <>
+            <div className="flex items-center justify-center mx-auto h-auto w-screen bg-yellow-50">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
 
-                        {comp}
+                    {comp}
 
-                        <div
-                            onClick={() => setOpen(false)}
-                            className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/50" : "invisible"} `}
-                        >
-                            <img src={fullScreenImgPath} alt="" className="h-full w-auto"/>
-                        </div>
+                    <div
+                        onClick={() => setOpen(false)}
+                        className={`fixed inset-0 flex justify-center items-center transition-colors ${open ? "visible bg-black/50" : "invisible"} `}
+                    >
+                        <img src={fullScreenImgPath} alt="" className="h-full w-auto"/>
                     </div>
                 </div>
-                <Contacts/>
-                <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} currentLang={currentLang}/>
-            </>
-        )
-        }
-        export default Chair
+            </div>
+            <Contacts/>
+            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} currentLang={currentLang}/>
+        </>
+    )
+}
+export default Chair
