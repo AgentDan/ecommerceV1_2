@@ -5,14 +5,11 @@ export const Statetwo =
         {
             id: v1(),
             check: false,
-            nameProject: "poligonRhino",
-            def: [
-                {file: "poligonRhinoDefoult"},
-            ],
             components: [
-                {id: v1(), name: "RhinoChrome", file: "poligonRhinoChrome", check: true},
-                {id: v1(), name: "RhinoGold", file: "poligonRhinoGold", check: false},
-                {id: v1(), name: "RhinoBlack", file: "poligonRhinoBlack", check: false},
+                {id: v1(), name: "Vendor code LC01", check: true, elems:["lightConcrete1elem1", "lightConcrete1elem2", "lightConcrete1elem3"]},
+                {id: v1(), name: "Vendor code LC02", check: false, elems:["lightConcrete2elem1","lightConcrete2elem2","lightConcrete2elem3"]},
+                {id: v1(), name: "Vendor code LC03", check: false, elems:["lightConcrete3elem1", "lightConcrete3elem2","lightConcrete3elem3"]},
+                {id: v1(), name: "Vendor code LC04", check: false, elems:["lightConcrete4elem1", "lightConcrete4elem2"]},
             ]
         },
         {

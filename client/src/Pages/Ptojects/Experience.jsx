@@ -1,9 +1,11 @@
 import {OrbitControls, Stage} from "@react-three/drei"
-import React, {Suspense} from "react";
-import Box from "./render/Box";
-import {RenderElements} from "./render/RenderElements";
+import React, {Suspense} from "react"
+import Box from "./render/Box"
+import {RenderElements} from "./render/RenderElements"
+import RenderElems from "./render/RenderElems";
 
 export const Experience = ({myElements}) => {
+    // console.log("myElements: ", myElements)
     return (
         <>
             <Stage
@@ -21,7 +23,7 @@ export const Experience = ({myElements}) => {
                     {
                         myElements.map((t) => {
                             return (
-                                t.check && <RenderElements myPath={t.file}/>
+                                t.check && <RenderElems elems={t.elems}/>
                             )
                         })
                     }
@@ -30,7 +32,7 @@ export const Experience = ({myElements}) => {
             <OrbitControls
                 makeDefault
                 minPolarAngle={0}
-                maxPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI }
             />
         </>
     )
