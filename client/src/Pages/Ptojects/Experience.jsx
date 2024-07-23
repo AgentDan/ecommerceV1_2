@@ -9,12 +9,12 @@ export const Experience = ({myElements}) => {
             <Stage
                 intensity={0.2}
                 environment="city"
-                // shadows={{
-                //     type: "accumulative",
-                //     color: "#d9afd9",
-                //     colorBlend: 2,
-                //     opacity: 2,
-                // }}
+                shadows={{
+                    // type: "accumulative",
+                    color: "#d9afd9",
+                    colorBlend: 2,
+                    opacity: 2,
+                }}
                 adjustCamera={2}
             >
                 <Suspense fallback={<Box/>}>

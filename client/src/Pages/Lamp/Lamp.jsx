@@ -93,7 +93,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                                              onClick={() => onClickFullScreenImg(i.foto)}
                                         />
                                     </div>
-                                    <Link to={`/project/${i.path3D}`}
+                                    <Link to={`/project/${i.path3D}/`}
                                         // target="_blank"
                                           className="h-12 text-xl text-white pt-1 text-center cursor-pointer bg-blue-600 rounded-lg"
                                     >
