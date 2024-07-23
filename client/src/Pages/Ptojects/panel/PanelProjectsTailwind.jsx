@@ -46,7 +46,7 @@ const PanelProjectsTailwind = () => {
 
     return (
         <>
-            <div className="fixed right-0.5 top-1 flex flex-col items-center flex-wrap w-48">
+            <div className="fixed right-0.5 top-1 flex flex-col items-center flex-wrap w-48 ">
                 <div
                     className='cursor-pointer font-bold top-1 right-1 flex flex-col items-start backdrop-blur-sm bg-white/30 w-44 h-10 rounded-3xl pl-3 pt-2'
                     onClick={onClickHome}
