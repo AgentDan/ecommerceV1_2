@@ -40,7 +40,7 @@ export const Menu = (props) => {
                     </div>
 
                     <div className={'h-6 w-auto cursor-pointer text-xl'}>
-                        <Link to={"/chair"}
+                        <Link to={"/furniture"}
                               onClick={() => setMenuOpened(false)}
                         >
                             {currentLang === "en" ? "Furniture" : ""}
