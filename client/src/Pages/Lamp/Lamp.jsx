@@ -1,6 +1,6 @@
 import ReactCardFlip from "react-card-flip"
 import {StateLight} from "../../state/stateLight"
-import {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import {useNavigate, Link} from "react-router-dom"
 import Contacts from "../Contacts/Contacts"
 import {Menu} from "../Menu/Menu"
@@ -30,7 +30,7 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                         <ReactCardFlip isFlipped={i.check} flipDirection={"horizontal"}>
                             <div className="card h-5/6 bg-white">
                                 <div className="p-5 flex flex-col ">
-                                    <div className="rounded-xl overflow-hidden xs:h-full">
+                                    <div className="rounded-xl overflow-hidden ">
                                         <img src={i.foto} alt=""
                                              className="h-auto w-auto "
                                              onClick={() => onClickFullScreenImg(i.foto)}
@@ -88,6 +88,9 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
 
     return (
         <>
+            <div className="mt-0 w-screen h-16 fixed fixed-row right-1 backdrop-blur-sm bg-gray-500/50  z-20"></div>
+            <Contacts/>
+            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} currentLang={currentLang}/>
             <div className="flex items-center justify-center mx-auto h-auto w-screen bg-yellow-50">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-28 m-16">
 
@@ -101,8 +104,6 @@ const Chair = ({currentLang, menuOpened, setMenuOpened}) => {
                     </div>
                 </div>
             </div>
-            <Contacts/>
-            <Menu menuOpened={menuOpened} setMenuOpened={setMenuOpened} currentLang={currentLang}/>
         </>
     )
 }

@@ -41,7 +41,7 @@ function ProjectOne({currentLang}) {
                             amet commodi consequatur doloremque,
                         </div>
                         <div
-                            className="sm:w-1/2 md:w-2/6 lg:w-1/6 lg:ml-40 mt-4 md:mt-40 h-auto w-1/2 text-white text-3xl p-2 border-4 rounded-2xl text-center cursor-pointer bg-amber-900  hover:bg-red-700"
+                            className="sm:w-1/2 md:w-2/6 lg:w-1/6 lg:ml-40 mt-4 md:mt-40 h-auto w-1/2 text-white text-3xl p-2 border-4 rounded-2xl text-center cursor-pointer bg-amber-900  md:hover:bg-red-700"
                             onClick={onclickButton1}
                         >
                             Заказать
